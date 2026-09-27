@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Mas Ijun</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css?v=4"
+    >
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- LOGIN -->
+    <!-- ============================= -->
+
+    <main
+        id="login-page"
+        class="admin-page"
+    >
+
+        <section class="login-card">
+
+            <div class="login-header">
+
+                <p class="login-label">
+                    ADMIN PANEL
+                </p>
+
+                <h1>
+                    MAS IJUN
+                </h1>
+
+                <p>
+                    Kelola website BAKSO PENTOL KUAH MAS IJUN.
+                </p>
+
+            </div>
+
+
+            <form id="admin-login">
+
+                <div class="form-group">
+
+                    <label for="admin-username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="admin-username"
+                        placeholder="Masukkan username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="admin-password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="admin-password"
+                        placeholder="Masukkan password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="admin-button"
+                >
+                    Masuk
+                </button>
+
+
+                <p
+                    id="login-message"
+                    class="login-message"
+                ></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- DASHBOARD -->
+    <!-- ============================= -->
+
+    <main
+        id="dashboard-page"
+        class="dashboard-page"
+        hidden
+    >
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <p class="login-label">
+                    ADMIN PANEL
+                </p>
+
+                <h1>
+                    MAS IJUN
+                </h1>
+
+            </div>
+
+
+            <button
+                id="logout-button"
+                class="logout-button"
+                type="button"
+            >
+                Keluar
+            </button>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <!-- ============================= -->
+            <!-- JUDUL DASHBOARD -->
+            <!-- ============================= -->
+
+            <div class="dashboard-title">
+
+                <p class="login-label">
+                    DASHBOARD
+                </p>
+
+                <h2>
+                    Pengaturan Website
+                </h2>
+
+                <p>
+                    Kelola informasi yang tampil di website pelanggan.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- RINGKASAN -->
+            <!-- ============================= -->
+
+            <section class="dashboard-summary">
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        TOTAL MENU
+                    </span>
+
+                    <strong id="summary-total-menu">
+                        0
+                    </strong>
+
+                    <small>
+                        Menu terdaftar
+                    </small>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        TERSEDIA
+                    </span>
+
+                    <strong id="summary-available-menu">
+                        0
+                    </strong>
+
+                    <small>
+                        Menu siap dijual
+                    </small>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        HABIS
+                    </span>
+
+                    <strong id="summary-unavailable-menu">
+                        0
+                    </strong>
+
+                    <small>
+                        Menu sedang habis
+                    </small>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        STATUS
+                    </span>
+
+                    <strong
+                        id="summary-status"
+                        class="summary-status"
+                    >
+                        -
+                    </strong>
+
+                    <small>
+                        Status jualan
+                    </small>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- MENU -->
+            <!-- ============================= -->
+
+            <section class="admin-section">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            MENU
+                        </p>
+
+                        <h3>
+                            Daftar Menu
+                        </h3>
+
+                    </div>
+
+
+                    <button
+                        id="add-menu-button"
+                        class="admin-button small-button"
+                        type="button"
+                    >
+                        + Tambah Menu
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="admin-menu-list"
+                    class="admin-menu-list"
+                >
+                    Memuat menu...
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- INFORMASI USAHA -->
+            <!-- ============================= -->
+
+            <section class="admin-section">
+
+                <div>
+
+                    <p class="section-label">
+                        INFORMASI USAHA
+                    </p>
+
+                    <h3>
+                        Informasi Dasar
+                    </h3>
+
+                </div>
+
+
+                <div class="admin-form">
+
+                    <div class="form-group">
+
+                        <label for="business-name">
+                            Nama Usaha
+                        </label>
+
+                        <input
+                            type="text"
+                            id="business-name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="business-description">
+                            Deskripsi
+                        </label>
+
+                        <textarea
+                            id="business-description"
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="business-whatsapp">
+                            WhatsApp
+                        </label>
+
+                        <input
+                            type="text"
+                            id="business-whatsapp"
+                        >
+
+                    </div>
+
+
+                    <button
+                        id="save-business"
+                        class="admin-button"
+                        type="button"
+                    >
+                        Simpan Informasi
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- JADWAL & LOKASI -->
+            <!-- ============================= -->
+
+            <section class="admin-section">
+
+                <div>
+
+                    <p class="section-label">
+                        JADWAL & LOKASI
+                    </p>
+
+                    <h3>
+                        Pengaturan Jadwal Jualan
+                    </h3>
+
+                    <p class="admin-section-description">
+                        Atur lokasi, jam buka, jam tutup,
+                        dan Google Maps setiap hari.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="admin-schedule-list"
+                    class="admin-schedule-list"
+                >
+                    Memuat jadwal...
+                </div>
+
+
+                <button
+                    id="save-schedule"
+                    class="admin-button"
+                    type="button"
+                >
+                    Simpan Semua Jadwal
+                </button>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- STATUS JUALAN -->
+            <!-- ============================= -->
+
+            <section class="admin-section">
+
+                <div>
+
+                    <p class="section-label">
+                        STATUS JUALAN
+                    </p>
+
+                    <h3>
+                        Status Jualan Hari Ini
+                    </h3>
+
+                    <p class="admin-section-description">
+                        Tentukan status yang ditampilkan kepada pelanggan.
+                    </p>
+
+                </div>
+
+
+                <div class="status-admin-form">
+
+                    <div class="form-group">
+
+                        <label for="business-status">
+                            Status
+                        </label>
+
+                        <select id="business-status">
+
+                            <option value="auto">
+                                Otomatis berdasarkan jadwal
+                            </option>
+
+                            <option value="open">
+                                Sedang Jualan
+                            </option>
+
+                            <option value="closed">
+                                Tidak Jualan
+                            </option>
+
+                            <option value="holiday">
+                                Libur / Tutup Hari Ini
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="status-message">
+                            Pesan tambahan
+                        </label>
+
+                        <input
+                            type="text"
+                            id="status-message"
+                            placeholder="Contoh: Hari ini jualan lebih cepat."
+                        >
+
+                    </div>
+
+
+                    <button
+                        id="save-status"
+                        class="admin-button"
+                        type="button"
+                    >
+                        Simpan Status
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- PENGUMUMAN -->
+            <!-- ============================= -->
+
+            <section class="admin-section">
+
+                <div>
+
+                    <p class="section-label">
+                        PENGUMUMAN
+                    </p>
+
+                    <h3>
+                        Pengumuman Website
+                    </h3>
+
+                </div>
+
+
+                <div class="admin-form">
+
+                    <div class="form-group">
+
+                        <label for="announcement">
+                            Isi Pengumuman
+                        </label>
+
+                        <textarea
+                            id="announcement"
+                            rows="4"
+                            placeholder="Kosongkan jika tidak ada pengumuman."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        id="save-announcement"
+                        class="admin-button"
+                        type="button"
+                    >
+                        Simpan Pengumuman
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- MODAL TAMBAH / EDIT MENU -->
+    <!-- ============================= -->
+
+    <div
+        id="menu-modal"
+        class="modal-overlay"
+        hidden
+    >
+
+        <div class="menu-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="section-label">
+                        MENU
+                    </p>
+
+                    <h3 id="menu-modal-title">
+                        Tambah Menu
+                    </h3>
+
+                </div>
+
+
+                <button
+                    id="close-menu-modal"
+                    class="modal-close"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="menu-form">
+
+                <input
+                    type="hidden"
+                    id="menu-id"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="menu-name">
+                        Nama Menu
+                    </label>
+
+                    <input
+                        type="text"
+                        id="menu-name"
+                        placeholder="Contoh: Bakso Pentol Keju"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="menu-price">
+                        Harga
+                    </label>
+
+                    <input
+                        type="number"
+                        id="menu-price"
+                        placeholder="10000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="menu-image">
+                        Nama File Gambar
+                    </label>
+
+                    <input
+                        type="text"
+                        id="menu-image"
+                        placeholder="assets/images/nama-menu.webp"
+                    >
+
+                    <small>
+                        Contoh: assets/images/pentol-keju.webp
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="menu-available"
+                            checked
+                        >
+
+                        Menu tersedia
+
+                    </label>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-menu"
+                        class="secondary-button"
+                    >
+                        Batal
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="admin-button"
+                    >
+                        Simpan Menu
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin.js?v=4"></script>
+
+</body>
+
+</html>

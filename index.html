@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Bakso Pentol Kuah Mas Ijun - Menu, jadwal jualan, lokasi, dan pemesanan."
+    >
+
+    <meta
+        name="theme-color"
+        content="#b33a24"
+    >
+
+    <title>Bakso Pentol Kuah Mas Ijun</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="site-header">
+
+        <div class="container header-content">
+
+            <a
+                href="#"
+                class="brand"
+            >
+                <span>MAS IJUN</span>
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#jadwal">
+                    Jadwal
+                </a>
+
+                <a href="#tentang">
+                    Tentang
+                </a>
+
+                <a href="#kontak">
+                    Kontak
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ============================= -->
+        <!-- HERO -->
+        <!-- ============================= -->
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <p class="eyebrow">
+                        BAKSO PENTOL KUAH
+                    </p>
+
+
+                    <h1>
+                        MAS IJUN
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Bakso pentol dengan berbagai pilihan isian,
+                        disajikan dengan kuah hangat.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#menu"
+                            class="button button-primary"
+                        >
+                            Lihat Menu
+                        </a>
+
+
+                        <a
+                            href="#"
+                            id="hero-whatsapp"
+                            class="button button-secondary"
+                        >
+                            Pesan
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+    <img
+        src="assets/images/hero-bakso.webp"
+        alt="Bakso Pentol Kuah Mas Ijun"
+    >
+
+</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- STATUS HARI INI -->
+        <!-- ============================= -->
+
+        <section class="today-section">
+
+            <div class="container">
+
+                <div class="today-card">
+
+                    <div>
+
+                        <p class="section-label">
+                            HARI INI
+                        </p>
+
+
+                        <h2 id="today-status">
+                            Memuat jadwal...
+                        </h2>
+
+
+                        <p id="today-location">
+                            Memuat lokasi...
+                        </p>
+
+
+                        <p id="today-hours">
+                            Memuat jam...
+                        </p>
+
+
+                        <a
+                            id="today-maps"
+                            class="button button-secondary"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Buka di Google Maps
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    class="schedule-note"
+                    id="schedule-note"
+                ></p>
+
+            </div>
+
+        </section>
+
+        <!-- ============================= -->
+<!-- PENGUMUMAN -->
+<!-- ============================= -->
+
+<section
+    id="announcement-section"
+    class="announcement-section"
+    hidden
+>
+
+    <div class="container">
+
+        <div class="announcement-card">
+
+            <p class="section-label">
+                INFORMASI
+            </p>
+
+            <h2>
+                Pengumuman
+            </h2>
+
+            <p id="announcement-text"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- ============================= -->
+        <!-- MENU -->
+        <!-- ============================= -->
+
+        <section
+            class="menu-section"
+            id="menu"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        MENU
+                    </p>
+
+
+                    <h2>
+                        Pilihan Bakso
+                    </h2>
+
+
+                    <p>
+                        Pilih menu yang kamu inginkan.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="menu-grid"
+                    id="menu-list"
+                >
+                    <!-- Menu dibuat otomatis oleh JavaScript -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- CART -->
+        <!-- ============================= -->
+
+        <section class="cart-section">
+
+            <div class="container">
+
+                <div class="cart-card">
+
+                    <div class="section-heading">
+
+                        <p class="section-label">
+                            PESANAN
+                        </p>
+
+
+                        <h2>
+                            Pesanan Kamu
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        id="cart-items"
+                        class="cart-items"
+                    >
+
+                        <p class="empty-cart">
+                            Belum ada menu yang dipilih.
+                        </p>
+
+                    </div>
+
+
+                    <div class="cart-total">
+
+                        <span>
+                            Total
+                        </span>
+
+
+                        <strong id="cart-total">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="whatsapp-order"
+                        class="button button-primary button-full"
+                        type="button"
+                        disabled
+                    >
+                        Pesan melalui WhatsApp
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- JADWAL -->
+        <!-- ============================= -->
+
+        <section
+            class="schedule-section"
+            id="jadwal"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        JADWAL
+                    </p>
+
+
+                    <h2>
+                        Jadwal Jualan
+                    </h2>
+
+
+                    <p>
+                        Lokasi dan jam jualan setiap hari.
+                    </p>
+
+                </div>
+
+
+                <div class="schedule-table-wrapper">
+
+                    <table class="schedule-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Hari
+                                </th>
+
+                                <th>
+                                    Lokasi
+                                </th>
+
+                                <th>
+                                    Jam
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="schedule-list">
+                            <!-- Jadwal dibuat otomatis -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <p class="schedule-note">
+
+                    Jadwal dan lokasi jualan dapat berubah sewaktu-waktu
+                    menyesuaikan kondisi di lapangan.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- TENTANG -->
+        <!-- ============================= -->
+
+        <section
+            class="about-section"
+            id="tentang"
+        >
+
+            <div class="container about-content">
+
+                <div>
+
+                    <p class="section-label">
+                        TENTANG
+                    </p>
+
+
+                    <h2>
+                        Bakso Pentol Kuah Mas Ijun
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Bakso Pentol Kuah Mas Ijun menyajikan berbagai pilihan
+                    bakso pentol dengan isian yang berbeda. Informasi menu,
+                    jadwal, dan lokasi jualan tersedia di website ini.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- KONTAK -->
+        <!-- ============================= -->
+
+        <section
+            class="contact-section"
+            id="kontak"
+        >
+
+            <div class="container">
+
+                <div class="contact-card">
+
+                    <div>
+
+                        <p class="section-label">
+                            KONTAK
+                        </p>
+
+
+                        <h2>
+                            Ingin memesan?
+                        </h2>
+
+
+                        <p>
+                            Hubungi Mas Ijun melalui WhatsApp.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        id="contact-whatsapp"
+                        class="button button-primary"
+                    >
+                        Hubungi WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="site-footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <strong>
+                BAKSO PENTOL KUAH MAS IJUN
+            </strong>
+
+            <p>
+                Mangkai Baru
+            </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+            <p>
+                ©
+                <span id="current-year"></span>
+                Mas Ijun
+            </p>
+
+
+            <a
+                href="/admin"
+                class="admin-link"
+            >
+                Login Admin
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="script.js?v=4"></script>
+
+</body>
+
+</html>
