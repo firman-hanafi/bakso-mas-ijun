@@ -1351,3 +1351,82 @@ section {
 .brand {
     display: none !important;
 }
+
+/* =========================================
+   TEMA "CANTIK & RINGAN" (CLEAN & MINIMALIST)
+   ========================================= */
+
+/* 1. Palet Warna Baru: Lebih Bersih, Cerah, dan Elegan */
+:root {
+    --background: #faf8f5 !important; /* Latar belakang putih bersih/tulang */
+    --surface: #ffffff !important;
+    --primary: #e63946 !important; /* Merah cerah modern */
+    --primary-dark: #cc2b37 !important;
+    --text: #2b2830 !important; /* Hitam keabuan agar mata tidak lelah */
+    --text-muted: #8e8b94 !important;
+    --border: transparent !important; /* Hilangkan garis-garis kaku */
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important; /* Bayangan super lembut */
+}
+
+/* 2. Header Bersih Seperti Kaca (Glassmorphism) */
+.site-header {
+    border-bottom: none !important;
+    background: rgba(250, 248, 245, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+/* 3. Kartu Menu, Keranjang, dll (Tanpa Garis, Hanya Bayangan Lembut) */
+.menu-card, 
+.cart-card, 
+.announcement-card, 
+.schedule-table-wrapper {
+    border: none !important;
+    background: #ffffff !important;
+    box-shadow: var(--shadow) !important;
+    border-radius: 24px !important; /* Sudut lebih bulat / kekinian */
+    overflow: hidden;
+}
+
+/* Efek melayang saat kartu menu disentuh */
+.menu-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(230, 57, 70, 0.08) !important;
+}
+
+/* 4. Tombol Estetik & Ringan */
+.button, 
+.menu-add {
+    border-radius: 100px !important; /* Bentuk pil oval sempurna */
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Tombol Tambah ke Keranjang */
+.menu-add {
+    background: #fdf3f4 !important; /* Warna pink/merah sangat pudar */
+    color: var(--primary) !important;
+}
+
+.menu-add:hover {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 16px rgba(230, 57, 70, 0.25) !important;
+}
+
+/* 5. Kartu "Hari Ini" Lebih Mewah */
+.today-card {
+    background: linear-gradient(135deg, #e63946, #b1111d) !important;
+    border-radius: 28px !important;
+    border: none !important;
+    box-shadow: 0 15px 30px rgba(230, 57, 70, 0.25) !important;
+}
+
+#today-maps {
+    border: none !important;
+    color: var(--primary) !important;
+    background: #ffffff !important;
+    border-radius: 100px !important;
+}
