@@ -877,9 +877,8 @@ section {
 }
 
 .contact-card p:not(.section-label) {
-    color: var(--text-muted);
+    color: #5b554f;
 }
-
 
 /* ---------- FOOTER ---------- */
 
@@ -905,8 +904,7 @@ section {
 }
 
 .footer-content p {
-    color: #bdb5ac;
-
+    color: #d8d0c7;
     font-size: 0.85rem;
 }
 
@@ -921,7 +919,7 @@ section {
 }
 
 .admin-link {
-    color: #777;
+    color: #bdb5ac;
 
     font-size: 0.8rem;
 
