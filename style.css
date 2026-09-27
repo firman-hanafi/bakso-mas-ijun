@@ -1346,3 +1346,8 @@ section {
 .menu-add:active {
     transform: scale(0.97);
 }
+
+/* Menyembunyikan nama brand/tulisan Mas Ijun di header */
+.brand {
+    display: none !important;
+}
