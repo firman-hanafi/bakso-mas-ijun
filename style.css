@@ -3051,3 +3051,130 @@ button:focus-visible {
         animation-iteration-count: 1 !important;
     }
 }
+
+/* =========================================================
+   MOBILE SCHEDULE — NO HORIZONTAL SCROLL
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+    /* Hilangkan scroll horizontal pada area jadwal */
+    .schedule-table-wrap,
+    .schedule-wrapper,
+    .schedule-scroll {
+        overflow-x: visible !important;
+        width: 100%;
+    }
+
+    /* Tabel berubah menjadi kumpulan kartu */
+    .schedule-table {
+        width: 100% !important;
+        min-width: 0 !important;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+        display: block;
+    }
+
+    .schedule-table thead {
+        display: none;
+    }
+
+    .schedule-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .schedule-table tr {
+        display: grid;
+        grid-template-columns: 78px minmax(0, 1fr);
+        gap: 12px;
+        width: 100%;
+        padding: 16px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-sizing: border-box;
+    }
+
+    .schedule-table td {
+        display: block;
+        width: auto !important;
+        min-width: 0;
+        padding: 0 !important;
+        border: 0 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+    }
+
+    /* Hari */
+    .schedule-table td:first-child {
+        font-weight: 800;
+        color: var(--primary);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    /* Kolom lokasi + jam + Maps */
+    .schedule-table td:nth-child(2) {
+        color: var(--text);
+        line-height: 1.45;
+    }
+
+    .schedule-table td:nth-child(3) {
+        grid-column: 2;
+        color: var(--primary);
+        font-weight: 700;
+        margin-top: -4px;
+    }
+
+    .schedule-table td:nth-child(4) {
+        grid-column: 2;
+        margin-top: 2px;
+    }
+
+    /* Tombol Maps */
+    .schedule-table td a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        background: var(--surface-2);
+        color: var(--primary);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .schedule-table td a:active {
+        transform: scale(0.97);
+    }
+
+    /* Hari yang sedang aktif */
+    .schedule-table tr.today,
+    .schedule-table tr.active,
+    .schedule-table tr.current-day {
+        border-color: rgba(181, 58, 37, 0.35);
+        background: #fff9f3;
+    }
+
+    /* Layar sangat kecil */
+    @media (max-width: 380px) {
+        .schedule-table tr {
+            grid-template-columns: 68px minmax(0, 1fr);
+            gap: 10px;
+            padding: 14px;
+            border-radius: 14px;
+        }
+
+        .schedule-table td:first-child {
+            font-size: 0.82rem;
+        }
+
+        .schedule-table td:nth-child(2),
+        .schedule-table td:nth-child(3) {
+            font-size: 0.86rem;
+        }
+    }
+}
