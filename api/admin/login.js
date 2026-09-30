@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+
     if (req.method !== "POST") {
         return res.status(405).json({
             success: false,
@@ -6,7 +7,32 @@ export default async function handler(req, res) {
         });
     }
 
-    const { username, password } = req.body;
+
+    const { username, password } =
+        req.body || {};
+
+
+    if (
+        typeof username !== "string" ||
+        typeof password !== "string"
+    ) {
+        return res.status(400).json({
+            success: false,
+            message: "Username dan password wajib diisi."
+        });
+    }
+
+
+    if (
+        username.length > 100 ||
+        password.length > 200
+    ) {
+        return res.status(400).json({
+            success: false,
+            message: "Data login tidak valid."
+        });
+    }
+
 
     if (
         username === process.env.ADMIN_USERNAME &&
@@ -17,6 +43,7 @@ export default async function handler(req, res) {
             token: process.env.ADMIN_TOKEN
         });
     }
+
 
     return res.status(401).json({
         success: false,

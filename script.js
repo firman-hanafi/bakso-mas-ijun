@@ -26,15 +26,45 @@ function formatRupiah(number) {
 // =========================================
 
 const dayNames = [
+
     "minggu",
+
     "senin",
+
     "selasa",
+
     "rabu",
+
     "kamis",
+
     "jumat",
+
     "sabtu"
+
 ];
 
+
+// =========================================
+// SECURITY HELPERS
+// =========================================
+
+function escapeHtml(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+function escapeHtmlAttribute(value) {
+
+    return escapeHtml(value);
+
+}
 
 // =========================================
 // DAPATKAN HARI SEKARANG
@@ -722,14 +752,19 @@ function renderMenu() {
                             </button>
                         `;
 
+                const safeName =
+                    escapeHtml(item.name);
+
+                const safeImage =
+                    escapeHtmlAttribute(item.image);
 
                 card.innerHTML = `
 
                     <div class="menu-image">
 
                         <img
-                            src="${item.image}"
-                            alt="${item.name}"
+                            src="${safeImage}"
+                            alt="${safeName}"
                             loading="lazy"
                         >
 
@@ -739,7 +774,7 @@ function renderMenu() {
                     <div class="menu-info">
 
                         <h3 class="menu-name">
-                            ${item.name}
+                            ${safeName}
                         </h3>
 
 
@@ -1052,13 +1087,15 @@ function renderCart() {
             element.className =
                 "cart-item";
 
+            const safeName =
+                escapeHtml(item.name);
 
             element.innerHTML = `
 
                 <div>
 
                     <div class="cart-item-name">
-                        ${item.name}
+                        ${safeName}
                     </div>
 
                     <div class="cart-item-price">
@@ -1482,6 +1519,16 @@ function renderSchedule() {
             }
 
 
+                       const safeLocation =
+                escapeHtml(schedule.location);
+
+            const safeOpen =
+                escapeHtml(schedule.open);
+
+            const safeClose =
+                escapeHtml(schedule.close);
+
+
             row.innerHTML = `
 
                 <td>
@@ -1489,17 +1536,16 @@ function renderSchedule() {
                 </td>
 
                 <td>
-                    ${schedule.location}
+                    ${safeLocation}
                 </td>
 
                 <td>
-                    ${schedule.open}
-                    –
-                    ${schedule.close}
+                   ${safeOpen}
+                   -
+                   ${safeClose}
                 </td>
 
             `;
-
 
             scheduleList.appendChild(
                 row

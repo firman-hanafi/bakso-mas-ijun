@@ -40,6 +40,13 @@
             "price": 15000,
             "image": "assets/images/pentol-ayam-suwir.webp",
             "available": true
+        },
+        {
+            "id": 6,
+            "name": "pp",
+            "price": 8768,
+            "image": "",
+            "available": true
         }
     ],
     "schedule": {
